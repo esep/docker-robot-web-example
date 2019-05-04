@@ -7,9 +7,10 @@ services:
     volumes: 
       - ./:/usr/share/nginx/html:ro
     ports: 
+      # For testing with browser as localhost:8081
       - "8081:80"
     expose:
-      - 80    
+      - 80
 
   # https://github.com/SeleniumHQ/docker-selenium
   hub:
@@ -27,7 +28,7 @@ services:
       HUB_HOST: hub
 
   firefox:
-    image: selenium/node-firefox:3.141.59-neon
+    image: selenium/node-firefox:latest
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
