@@ -45,16 +45,29 @@ services:
 
   test-chrome:
     build: robot-image
-    command: -v BROWSER:gc --outputdir /out /robot-tests
+    command: -v BROWSER:chrome --outputdir /out /robot-tests
     volumes:
       # Share robot tests with container
       - ./robot-image/robot-tests:/robot-tests:ro
-      - ./results/gc:/out:rw
+      - ./results/chrome:/out:rw
     depends_on:
       - web-nginx
       - chrome
     networks:
       - grid
+
+  test-firefox:
+    build: robot-image
+    command: -v BROWSER:firefox --outputdir /out /robot-tests
+    volumes:
+      # Share robot tests with container
+      - ./robot-image/robot-tests:/robot-tests:ro
+      - ./results/firefox:/out:rw
+    depends_on:
+      - web-nginx
+      - firefox
+    networks:
+      - grid      
 
 networks:
   grid:
