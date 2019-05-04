@@ -5,7 +5,7 @@ services:
   web-nginx:
     image: nginx
     volumes: 
-      - ./:/usr/share/nginx/html:ro
+      - ./web-page/:/usr/share/nginx/html:ro
     ports: 
       # For testing with browser as localhost:8081
       - "8081:80"
@@ -41,7 +41,7 @@ services:
     command: -v BROWSER:chrome --outputdir /results /robot-tests
     volumes:
       # Share robot tests and results with container
-      - ./robot-image/robot-tests:/robot-tests:ro
+      - ./robot-tests:/robot-tests:ro
       - ./results/chrome:/results:rw
     depends_on:
       - web-nginx
@@ -52,7 +52,7 @@ services:
     command: -v BROWSER:firefox --outputdir /results /robot-tests
     volumes:
       # Share robot tests and results with container
-      - ./robot-image/robot-tests:/robot-tests:ro
+      - ./robot-tests:/robot-tests:ro
       - ./results/firefox:/results:rw
     depends_on:
       - web-nginx
