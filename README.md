@@ -1,5 +1,8 @@
 # docker-robot-web-example
 
-Nginx container hosts a static html web page.
+The simplest and minimal example of how to run robot tests for a static web page hosted with nginx container with docker-compose commands.
 
-docker run --name web-nginx -p 8081:80 -v c:/repos/docker-robot-web-example:/usr/share/nginx/html:ro -d nginx
+This is more or less a further simplified version of
+https://github.com/eficode/Docker-Selenium-Example
+
+To get started, just run the run_tests.sh script with e.g. Git Bash to run setup Selenium browser containers and run robot test for Chrome and Firefox.
