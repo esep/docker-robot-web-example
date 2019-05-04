@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite with a single test for opening a web page
+Documentation     A test suite with a test for opening a web page
 Resource          resource.robot
 
 *** Test Cases ***

@@ -5,8 +5,6 @@ Library           SeleniumLibrary
 *** Variables ***
 ${SELENIUM}          http://hub:4444/wd/hub
 ${URL}       http://web-nginx:80/example.html
-${BROWSER}           Chrome
-
 
 *** Keywords ***
 Open Browser To Web Page
